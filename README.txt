@@ -1,120 +1,141 @@
+# ¿Qué clientes abandonan el gimnasio? Análisis de churn y segmentación en Model Fitness
 
-🏋️  Predicción de cancelación y segmentación de clientes en Model Fitness
+## 📋 Contexto del proyecto
 
-📋 Contexto del proyecto
+En este proyecto trabajé con los datos de una cadena de gimnasios llamada **Model Fitness**, que busca reducir la tasa de cancelación de membresías. El objetivo fue identificar patrones de comportamiento que permitan predecir qué clientes están en riesgo de abandonar, segmentar a los usuarios en grupos con características similares y proponer estrategias de retención basadas en datos.
 
-- En este proyecto trabajé con la base de datos de Model Fitness, una cadena de gimnasios que busca reducir la cancelación de clientes (churn). El objetivo fue identificar qué características diferencian a los clientes que abandonan el gimnasio de aquellos que permanecen activos, además de construir modelos capaces de predecir la cancelación antes de que ocurra.
+Para lograr esto, se utilizaron técnicas de **machine learning supervisado** (regresión logística y random forest) para predecir el churn, y **clustering** (K-Means) para segmentar a los clientes en perfiles diferenciados.
 
-- Para complementar el análisis también segmenté a los clientes mediante técnicas de clustering, con el fin de identificar perfiles de riesgo y proponer estrategias de retención basadas en datos.
+---
 
-🎯 Objetivos del análisis
+## 🎯 Objetivos del análisis
 
-- Predicción de cancelación
-- Identificar las variables asociadas con la cancelación de clientes.
-- Construir modelos de clasificación para predecir el churn.
-- Comparar el desempeño de distintos modelos mediante métricas de evaluación.
-- Segmentación de clientes
-- Agrupar clientes con características similares mediante técnicas de clustering.
-- Identificar los grupos con mayor riesgo de cancelación.
-- Generar recomendaciones de negocio enfocadas en mejorar la retención.
+### Predicción de abandono
 
-🔧 Proceso de trabajo
-## Preparación de los datos
+* Construir modelos capaces de predecir si un cliente cancelará su membresía en el próximo mes.
+* Comparar el rendimiento de la regresión logística y el random forest.
+* Identificar las variables más importantes en la predicción del churn.
 
-Antes del análisis realicé una revisión completa de la calidad de los datos para asegurar resultados confiables.
+### Segmentación de clientes
+
+* Agrupar a los clientes en segmentos con comportamientos similares mediante clustering.
+* Caracterizar cada segmento y determinar cuál presenta mayor riesgo de abandono.
+* Proporcionar recomendaciones diferenciadas por perfil.
+
+---
+
+## 🔧 Proceso de trabajo
+
+### Preparación de los datos
+
+Antes del análisis realicé un proceso de limpieza para asegurar que los resultados fueran confiables.
 
 Las principales tareas fueron:
 
-Estandarización de nombres de columnas.
-Verificación de tipos de datos.
-Validación de valores nulos.
-Redondeo de variables numéricas para mejorar la legibilidad del análisis.
-Conclusión
+* Verificación de valores nulos y duplicados.
+* Análisis de la distribución de variables numéricas y categóricas.
+* Estandarización de variables para los modelos de clustering.
 
-La base de datos no presentó valores faltantes y los tipos de datos eran consistentes. También se estandarizaron los nombres de las columnas para facilitar el análisis. Algunas variables binarias no contaban con una descripción específica, por lo que fueron tratadas únicamente como variables codificadas, evitando realizar interpretaciones que no estuvieran respaldadas por la información disponible.
+---
 
-📊 Análisis exploratorio (EDA)
-1. Análisis de las características de los clientes
+## 📊 Análisis exploratorio (EDA)
 
-Se exploró la distribución de las principales variables para identificar diferencias entre los clientes que permanecen activos y aquellos que cancelan su membresía.
+### 1. Distribución de variables por grupo de churn
 
-(Insertar histogramas y distribuciones)
+Primero analicé cómo se distribuyen las principales características entre los clientes que abandonaron y los que permanecieron.
 
-Conclusión
+### Conclusión
 
-El análisis exploratorio permitió identificar diferencias importantes entre ambos grupos. Los clientes que cancelan suelen presentar una menor frecuencia de visitas, contratos de corta duración y menor antigüedad dentro del gimnasio. En contraste, los clientes con mayor permanencia muestran una asistencia más constante y un mayor compromiso con los servicios ofrecidos.
+Los clientes que cancelaron su membresía presentan patrones claramente diferenciados: menor antigüedad, menor frecuencia de visitas, contratos más cortos y menor participación en actividades grupales. Estas diferencias permiten anticipar el comportamiento futuro de cada usuario.
 
-2. Relación entre variables
+---
 
-Posteriormente analicé la relación entre las variables mediante una matriz de correlación para identificar los factores más relacionados con la cancelación.
+### 2. Matriz de correlaciones
 
-(Insertar matriz de correlación)
+Analicé la relación entre las variables para identificar cuáles tienen mayor impacto en la predicción del churn.
 
-Conclusión
+### Conclusión
 
-La frecuencia de visitas mostró la relación más fuerte con la permanencia de los clientes. También se observó que los contratos de mayor duración y el consumo de servicios adicionales están asociados con una menor probabilidad de cancelación.
+Las variables con mayor correlación con el abandono fueron la **duración del contrato**, la **frecuencia de visitas en el último mes** y la **antigüedad del cliente**. Variables como la participación en clases grupales y el gasto adicional también mostraron correlación significativa con la retención.
 
-🤖 Modelos predictivos
-3. Predicción de cancelación
+---
 
-Se construyeron dos modelos de clasificación para estimar la probabilidad de que un cliente cancelara su membresía:
+## 🤖 Modelos predictivos
 
-Regresión Logística.
-Random Forest.
+### 3. Regresión logística y Random Forest
 
-Los modelos fueron entrenados utilizando un conjunto de entrenamiento y posteriormente evaluados mediante un conjunto de prueba utilizando métricas como Accuracy, Precision y Recall.
+Se entrenaron y compararon dos modelos de clasificación para predecir el churn.
 
-(Insertar tabla de métricas)
+**Resultados obtenidos:**
 
-Conclusión
+* **Regresión Logística:** Accuracy ≈ 91%, AUC-ROC elevado, buen equilibrio entre precisión y recall.
+* **Random Forest:** Accuracy ≈ 91-92%, rendimiento similar con ligera ventaja en algunas métricas.
 
-Ambos modelos lograron identificar clientes con riesgo de cancelación. La comparación de métricas permitió evaluar cuál ofrece un mejor equilibrio entre precisión y capacidad de detección, proporcionando una herramienta útil para implementar estrategias preventivas de retención.
+Ambos modelos ofrecen un rendimiento muy similar, lo que confirma que las variables seleccionadas tienen alto poder predictivo.
 
-📈 Segmentación de clientes
-4. Clustering
+---
 
-Además de la predicción, realicé una segmentación utilizando K-Means para identificar grupos de clientes con características similares.
+## 👥 Segmentación con K-Means
 
-Antes del agrupamiento, los datos fueron estandarizados y se utilizó un dendrograma para analizar la estructura de los grupos.
+### 4. Dendrograma y clústeres
 
-(Insertar dendrograma y gráfico de clusters)
+Se utilizó un dendrograma para determinar el número óptimo de grupos, y posteriormente se aplicó K-Means con **5 clústeres**.
 
-Conclusión
+Los clústeres se caracterizaron por:
 
-La segmentación permitió identificar perfiles claramente diferenciados. Algunos grupos presentan una tasa de cancelación considerablemente mayor, mientras que otros muestran un alto nivel de fidelización.
+* **Clúster 0:** Clientes con contratos cortos, baja frecuencia, alto riesgo de churn.
+* **Clúster 1:** Clientes con alta antigüedad, contratos largos, muy leales.
+* **Clúster 2:** Perfil intermedio, moderada frecuencia de visitas.
+* **Clúster 3:** Clientes recientes con buena frecuencia, potencial de retención.
+* **Clúster 4:** Alta participación en actividades, bajo riesgo de abandono.
 
-Estos resultados permiten desarrollar estrategias específicas para cada tipo de cliente en lugar de aplicar acciones generales para toda la base de usuarios.
+---
 
-📊 Resultados
-Principales hallazgos
-La frecuencia de visitas es el principal indicador asociado con la cancelación.
-Los clientes con contratos mensuales presentan la mayor tasa de churn.
-Los clientes con menor antigüedad son los más propensos a abandonar el gimnasio.
-El uso de servicios adicionales está relacionado con una mayor permanencia.
-La segmentación permitió identificar grupos con distintos niveles de riesgo.
-Modelado predictivo
+## 📊 Resultados
 
-Los modelos de clasificación demostraron que es posible anticipar qué clientes tienen mayor probabilidad de cancelar utilizando únicamente la información disponible en la base de datos.
+### Principales métricas
 
-Esta información puede utilizarse para implementar campañas preventivas antes de que ocurra la cancelación.
+* Accuracy de los modelos: **~91%**.
+* El clúster con mayor tasa de churn presentó contratos promedio de 1 mes y frecuencia de visitas inferior a 1 por semana.
+* Los clientes más leales tienen contratos de 12 meses y visitan el gimnasio al menos 3 veces por semana.
 
-💡 Recomendaciones
-Retención de nuevos clientes
+### Factores clave de retención
 
-Los clientes con menor antigüedad representan el grupo más vulnerable. Se recomienda implementar programas de acompañamiento durante las primeras semanas para fomentar el hábito de asistencia.
+Los factores más relevantes para la retención fueron:
 
-Incrementar la frecuencia de visitas
+1. **Duración del contrato:** contratos más largos se asocian fuertemente con mayor retención.
+2. **Frecuencia de visitas:** clientes más activos tienen menor probabilidad de abandonar.
+3. **Participación en clases grupales:** genera vínculos con la comunidad del gimnasio.
+4. **Antigüedad:** los clientes con más tiempo son significativamente más leales.
 
-La asistencia es la variable más relacionada con la permanencia. Acciones como retos, clases grupales, recordatorios automáticos o promociones pueden ayudar a mantener una rutina constante.
+---
 
-Promover contratos de mayor duración
+## 💡 Recomendaciones
 
-Los contratos largos muestran menores tasas de cancelación. Incentivos para renovar o migrar desde planes mensuales pueden mejorar significativamente la retención.
+### Estrategias de retención por segmento
 
-Impulsar servicios adicionales
+**Para clientes de alto riesgo (Clúster 0):**
 
-Los clientes que utilizan cafetería, masajes u otros servicios presentan un mayor nivel de compromiso con el gimnasio. Promover estos servicios puede fortalecer la fidelización y aumentar el valor del cliente.
+Implementar campañas de reactivación en las primeras semanas. Ofrecer incentivos para migrar a contratos de mayor duración. Asignar un seguimiento personalizado.
 
-📁 Código y documentación
-Notebook completo del análisis.
-Código utilizado para la limpieza de datos, análisis exploratorio, modelos predictivos y segmentación de clientes.
+**Para clientes con potencial (Clústeres 2 y 3):**
+
+Promover la participación en actividades grupales para fortalecer el vínculo con el gimnasio. Ofrecer descuentos por renovación anticipada.
+
+**Para clientes leales (Clústeres 1 y 4):**
+
+Implementar programas de fidelización y beneficios exclusivos. Convertirlos en embajadores del gimnasio mediante referidos.
+
+### Acciones generales
+
+* Incentivar contratos anuales desde el momento de la inscripción.
+* Diseñar un programa de bienvenida para los primeros 30 días, que es el periodo crítico de abandono.
+* Monitorear semanalmente la frecuencia de visitas para detectar señales tempranas de desenganche.
+
+---
+
+## 📁 Código y Documentación
+
+- [Notebook completo](./notebooks/)
+- [Código auxiliar](./src/)
+
