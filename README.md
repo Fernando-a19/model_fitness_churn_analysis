@@ -4,7 +4,7 @@
 
 En este proyecto trabajé con los datos de una cadena de gimnasios llamada **Model Fitness**, cuyo objetivo es reducir la tasa de cancelación de membresías mediante el análisis del comportamiento de sus clientes.
 
-El análisis busca identificar los factores asociados al abandono, construir modelos predictivos capaces de anticipar la cancelación de una membresía y segmentar a los clientes en grupos con características similares para proponer estrategias de retención basadas en datos.
+El análisis busca identificar los factores asociados al abandono, construir modelos predictivos capaces de anticipar la cancelación de una membresía y segmentar a los clientes en grupos con características similares para diseñar estrategias de retención más efectivas.
 
 Para ello se emplearon técnicas de **Machine Learning Supervisado** (Regresión Logística y Random Forest) para la predicción del churn y **Machine Learning No Supervisado** (K-Means) para la segmentación de clientes.
 
@@ -55,13 +55,13 @@ Comparar las características de los clientes que permanecieron, con las de los 
 
 ### Gráfica
 
-![Distribución y cancelación por variable](results/Model%20fitness_files/Model%20fitness_11_0.png)
+![Distribución y cancelación por variable](results/images/01_cancelacion_por_variable.png)
 
 ---
 
 ### Conclusión
 
-Los clientes que cancelaron presentan menor antigüedad, menor frecuencia de visitas, contratos más cortos y menor participación en actividades grupales. Estas diferencias permiten detectar señales tempranas de abandono.
+Los clientes que cancelaron presentan menor antigüedad, menor frecuencia de visitas, contratos más cortos y menor participación en actividades grupales. Estas diferencias permiten detectar señales tempranas de riesgo.
 
 ---
 
@@ -73,13 +73,13 @@ Analizar la relación entre las variables para identificar cuáles tienen mayor 
 
 ### Gráfica
 
-![Matriz de correlaciones](results/Model%20fitness_files/Model%20fitness_13_0.png)
+![Matriz de correlaciones](results/images/02_matriz_correlacion.png)
 
 ---
 
 ### Conclusión
 
-La duración del contrato, la frecuencia de visitas y la antigüedad son las variables más relacionadas con la retención de clientes. La participación en clases grupales y el gasto adicional también muestran una relación importante.
+La duración del contrato, la frecuencia de visitas y la antigüedad son las variables más relacionadas con la retención de clientes. La participación en clases grupales y el gasto adicional también contribuyen positivamente a la permanencia.
 
 ---
 
@@ -114,7 +114,7 @@ Analizar los coeficientes del modelo para comprender qué variables incrementan 
 
 ### Gráfica
 
-![Coeficientes de Regresión Logística e importancias de Random Forest](results/Model%20fitness_files/Model%20fitness_25_0.png)
+![Coeficientes de Regresión Logística e importancias de Random Forest](results/images/05_coeficientes_importancia.png)
 
 ---
 
@@ -132,7 +132,7 @@ Identificar las variables más relevantes según Random Forest y comparar estos 
 
 ### Gráfica
 
-![Coeficientes de Regresión Logística e importancias de Random Forest](results/Model%20fitness_files/Model%20fitness_25_0.png)
+![Coeficientes de Regresión Logística e importancias de Random Forest](results/images/05_coeficientes_importancia.png)
 
 ---
 
@@ -152,7 +152,7 @@ Explorar la estructura de los datos para estimar el número adecuado de grupos a
 
 ### Gráfica
 
-![Dendrograma de usuarios](results/Model%20fitness_files/Model%20fitness_19_0.png)
+![Dendrograma de usuarios](results/images/03_dendrograma_clustering.png)
 
 ---
 
@@ -170,7 +170,7 @@ Determinar el número óptimo de clústeres para la segmentación.
 
 ### Gráfica
 
-![Método del codo y coeficiente silhouette](results/Model%20fitness_files/Model%20fitness_27_0.png)
+![Método del codo y coeficiente silhouette](results/images/06_codo_silhouette.png)
 
 ---
 
@@ -188,7 +188,7 @@ Describir el comportamiento de cada grupo de clientes obtenido mediante K-Means.
 
 ### Gráfica
 
-![Perfiles promedio por clúster](results/Model%20fitness_files/Model%20fitness_23_0.png)
+![Perfiles promedio por clúster](results/images/04_medias_por_cluster.png)
 
 ---
 
@@ -206,13 +206,13 @@ Identificar qué segmentos presentan la mayor probabilidad de cancelar su membre
 
 ### Gráfica
 
-![Tasa de churn por clúster](results/Model%20fitness_files/Model%20fitness_29_1.png)
+![Tasa de churn por clúster](results/images/07_cancelacion_por_cluster.png)
 
 ---
 
 ### Conclusión
 
-Los clientes con contratos cortos y baja frecuencia de asistencia concentran la mayor tasa de cancelación, mientras que los clientes con contratos largos y alta participación presentan la menor.
+Los clientes con contratos cortos y baja frecuencia de asistencia concentran la mayor tasa de cancelación, mientras que los clientes con contratos largos y alta participación presentan la menor probabilidad de churn.
 
 ---
 
@@ -231,11 +231,11 @@ Los clientes con contratos cortos y baja frecuencia de asistencia concentran la 
 
 El análisis muestra que la cancelación de clientes no ocurre al azar. Existen patrones claros que permiten identificar con anticipación a los usuarios con mayor riesgo de abandonar el gimnasio.
 
-Los principales hallazgos indican que los clientes que asisten con menor frecuencia, tienen poca antigüedad, contratan planes de corta duración o hacen un uso limitado de los servicios adicionales presentan una probabilidad significativamente mayor de cancelar su membresía. En contraste, los clientes con hábitos de asistencia constantes y mayor involucramiento con los servicios del gimnasio muestran una mayor permanencia.
+Los principales hallazgos indican que los clientes que asisten con menor frecuencia, tienen poca antigüedad, contratan planes de corta duración o hacen un uso limitado de los servicios adicionales, presentan mayor probabilidad de churn.
 
-Asimismo, la segmentación de clientes permitió identificar grupos con comportamientos y niveles de riesgo diferentes, lo que evidencia que una estrategia de retención general no es la opción más eficiente.
+Asimismo, la segmentación de clientes permitió identificar grupos con comportamientos y niveles de riesgo diferentes, lo que evidencia que una estrategia de retención general no es la opción más efectiva.
 
-En conjunto, estos resultados proporcionan una base objetiva para priorizar clientes en riesgo, intervenir antes de que abandonen el gimnasio y diseñar estrategias comerciales enfocadas en mejorar la permanencia y el valor de cada cliente.
+En conjunto, estos resultados proporcionan una base objetiva para priorizar clientes en riesgo, intervenir antes de que abandonen el gimnasio y diseñar estrategias comerciales enfocadas en mejorar la permanencia y el valor del cliente.
 
 ---
 
