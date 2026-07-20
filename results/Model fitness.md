@@ -350,7 +350,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_11_0.png)
+![Cancelación por variable](images/01_cancelacion_por_variable.png)
     
 
 
@@ -368,7 +368,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_13_0.png)
+![Matriz de correlación](images/02_matriz_correlacion.png)
     
 
 
@@ -456,7 +456,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_19_0.png)
+![Dendrograma clustering](images/03_dendrograma_clustering.png)
     
 
 
@@ -554,7 +554,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_23_0.png)
+![Medias por clúster](images/04_medias_por_cluster.png)
     
 
 
@@ -625,7 +625,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_25_0.png)
+![Coeficientes e importancias](images/05_coeficientes_importancia.png)
     
 
 
@@ -674,7 +674,7 @@ print("Nota: si priorizas comparabilidad con la entrega original, puedes mantene
 
 
     
-![png](Model%20fitness_files/Model%20fitness_27_0.png)
+![Codo y Silhouette](images/06_codo_silhouette.png)
     
 
 
@@ -742,7 +742,7 @@ plt.show()
 
 
     
-![png](Model%20fitness_files/Model%20fitness_29_1.png)
+![Cancelación por clúster](images/07_cancelacion_por_cluster.png)
     
 
 
