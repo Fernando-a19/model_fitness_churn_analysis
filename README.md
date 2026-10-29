@@ -41,7 +41,7 @@ El conjunto de datos contiene 4,000 registros y 14 columnas. No se encontraron v
 Comparar las características de los clientes que permanecieron con las de los clientes que cancelaron su membresía.
 
 ### Gráfica
-![Distribución y cancelación por variable]![alt text](image-1.png)
+![Distribución y cancelación por variable](results/images/image-1.png)
 ---
 ### Conclusión
 Los clientes que cancelaron presentan diferencias en variables relacionadas con la antigüedad, la frecuencia de visitas, la duración del contrato y la participación en actividades grupales. Estas diferencias permiten identificar patrones asociados con la cancelación y explorar posibles señales tempranas de riesgo.
@@ -52,7 +52,7 @@ Los clientes que cancelaron presentan diferencias en variables relacionadas con 
 Analizar las relaciones entre las variables e identificar asociaciones relevantes para comprender los patrones de cancelación.
 
 ### Gráfica
-![Matriz de correlaciones]![alt text](image-2.png)
+![Matriz de correlaciones](results/images/image-2.png)
 
 ---
 ### Conclusión
@@ -91,7 +91,7 @@ Su recall de 85.38 % indica que identificó aproximadamente el 85 % de los clien
 Analizar los coeficientes del modelo para comprender la dirección de la asociación entre las variables y la cancelación de membresías.
 
 ### Gráfica
-![Coeficientes de Regresión Logística e importancias de Random Forest]![alt text](image-3.png)
+![Coeficientes de Regresión Logística e importancias de Random Forest](results/images/image-3.png)
 
 ---
 ### Conclusión
@@ -105,7 +105,7 @@ La interpretación debe considerar que algunas variables relacionadas con la asi
 Identificar las variables relevantes para las predicciones de Random Forest y complementar la interpretación de la Regresión Logística.
 
 ### Gráfica
-![Importancia de variables de Random Forest]![alt text](image-4.png)
+![Importancia de variables de Random Forest](results/images/image-4.png)
 ---
 ### Conclusión
 Las importancias de Random Forest permiten reconocer las variables que contribuyen a las predicciones del modelo. Al compararlas con los coeficientes de la Regresión Logística, se obtiene una perspectiva complementaria sobre las características relevantes para el análisis.
@@ -119,7 +119,7 @@ Estas importancias no indican por sí solas si una variable aumenta o disminuye 
 Explorar la estructura de los datos mediante agrupamiento jerárquico y obtener una referencia para estudiar distintas alternativas de segmentación.
 
 ### Gráfica
-![Dendrograma de usuarios]![alt text](image-5.png)
+![Dendrograma de usuarios](results/images/image-5.png)
 
 ---
 ### Conclusión
@@ -133,7 +133,7 @@ Por ello, se complementa con el método del codo, el coeficiente **silhouette** 
 Evaluar diferentes cantidades de clústeres para comparar la calidad del agrupamiento y su utilidad para el análisis de clientes.
 
 ### Gráfica
-![Método del codo y coeficiente silhouette]![alt text](image-6.png)
+![Método del codo y coeficiente silhouette](results/images/image-6.png)
 
 ---
 ### Conclusión
@@ -147,7 +147,7 @@ Por ello, se continuó el análisis con tres y cinco clústeres para comparar su
 Describir el comportamiento de los clientes de cada grupo obtenido mediante K-Means.
 
 ### Gráfica
-![Perfiles promedio por clúster]![alt text](image-7.png)
+![Perfiles promedio por clúster](results/images/image-7.png)
 
 ---
 ### Conclusión
@@ -161,7 +161,7 @@ La segmentación complementa el modelo predictivo al permitir describir grupos d
 Comparar las tasas históricas de cancelación de los segmentos para identificar cuáles podrían requerir mayor atención.
 
 ### Gráfica
-![Tasa de churn por clúster]![alt text](image-8.png)
+![Tasa de churn por clúster](results/images/image-8.png)
 
 ---
 ### Conclusión
